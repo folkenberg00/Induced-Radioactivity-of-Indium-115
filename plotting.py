@@ -23,7 +23,6 @@ conf = 0.95; #confidence level
 
 def fit(time, a, b):
                 return a*numpy.exp(b*time);
-
 excel_file = pandas.read_excel("radioactivity.data.xlsx"); #reads the xlsx file format
 excel_file.to_csv ("radioactivity.data.csv", index = None, header=True); #converts xlsx to csv
 data = pandas.read_csv("radioactivity.data.csv"); #retrieves data from csv file
@@ -117,8 +116,5 @@ def plot():
 	matplotlib.pyplot.savefig('./output/plot.png');
 	matplotlib.pyplot.show();
 	exit();
-
-
-
 if __name__ == "__main__":
 	plot();
