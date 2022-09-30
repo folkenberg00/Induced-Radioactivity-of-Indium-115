@@ -35,7 +35,6 @@ y = numpy.log(pulses - (numpy.sum(measured_bg))/3.0); #the natural logarithm of 
 p = 2; #number of parameters in the adopted equation(corresponds to y = mx + c)
 nu = n - p; #number of degrees of freedom
 
-
 '''least square method preprocessing variables'''
 t_sum = numpy.sum(time); #sum of the elements in the time array
 tsq_sum = numpy.sum(time**2);
@@ -101,18 +100,30 @@ def plot():
 	ax.set_xlabel("Time (minutes)");
 	ax.set_ylabel('ln | N$_{i}$ - N$_{bg}$ |');
 	ax.set_title("Neutron Activation of Indium - 115 (Induced Radioactivity)");
-	ax.text(0.90, 0.68, 'ln | N$_{i}$ - N$_{bg}$ | = %.4f - %.3f t'%(c, lambd), transform=ax.transAxes, fontsize=9, fontweight="bold", color='b', ha='right', va='bottom', rotation='0', bbox=dict(facecolor='k'));
-	ax.text(0.24, 0.40, 'DECAY CONSTANT: ', transform=ax.transAxes, fontsize=8, color='r', ha='right', va='bottom', rotation='0', bbox=dict(facecolor='k'));
-	ax.text(0.44, 0.40, '%.4f ( %.4f)/min'%(lambd, abs_lambd), transform=ax.transAxes, fontsize=8, color='g', ha='right', va='bottom', rotation='0', bbox=dict(facecolor='k'));
-	ax.text(0.169, 0.35, 'HALF-LIFE: ', transform=ax.transAxes, fontsize=8, color='r', ha='right', va='bottom', rotation='0', bbox=dict(facecolor='k'));
-	ax.text(0.32, 0.35, '%.2f ( %.2f)min'%(half_life, abs_halflife), transform=ax.transAxes, fontsize=8, color='g', ha='right', va='bottom', rotation='0', bbox=dict(facecolor='k'));
-	ax.text(0.29, 0.30, 'DEGREES OF FREEDOM: ', transform=ax.transAxes, fontsize=8, color='r', ha='right', va='bottom', rotation='0', bbox=dict(facecolor='k'));
-	ax.text(0.32, 0.30, '%d'%(nu), transform=ax.transAxes, fontsize=8, color='g', ha='right', va='bottom', rotation='0', bbox=dict(facecolor='k'));
-	ax.text(0.229, 0.25, 'TEST CRITERION: ', transform=ax.transAxes, fontsize=8, color='r', ha='right', va='bottom', rotation='0', bbox=dict(facecolor='k'));
-	ax.text(0.30, 0.25, '%.2f'%(M), transform=ax.transAxes, fontsize=8, color='g', ha='right', va='bottom', rotation='0', bbox=dict(facecolor='k'));
-	ax.text(0.26, 0.20, 'CONFIDENCE LEVEL: ', transform=ax.transAxes, fontsize=8, color='r', ha='right', va='bottom', rotation='0', bbox=dict(facecolor='k'));
-	ax.text(0.31, 0.20, '%.2f'%(conf), transform=ax.transAxes, fontsize=8, color='g', ha='right', va='bottom', rotation='0', bbox=dict(facecolor='k'));
-	ax.legend([plot_1, plot_2], ["Data Points", 'Linear Fit, R = {:.3f}'.format(r_val)], borderpad=2, prop = {'size' : 6.5}, loc = 'upper right', shadow = True, facecolor="w", title = "Legend");
+	ax.text(0.90, 0.68, 'ln | N$_{i}$ - N$_{bg}$ | = %.4f - %.3f t'%(c, lambd), transform=ax.transAxes, fontsize=9, fontweight="bold",\
+		color='b', ha='right', va='bottom', rotation='0', bbox=dict(facecolor='k'));
+	ax.text(0.24, 0.40, 'DECAY CONSTANT: ', transform=ax.transAxes, fontsize=8, color='r', ha='right', va='bottom', rotation='0',\ 
+		bbox=dict(facecolor='k'));
+	ax.text(0.44, 0.40, '%.4f ( %.4f)/min'%(lambd, abs_lambd), transform=ax.transAxes, fontsize=8, color='g', ha='right', va='bottom',\
+		rotation='0', bbox=dict(facecolor='k'));
+	ax.text(0.169, 0.35, 'HALF-LIFE: ', transform=ax.transAxes, fontsize=8, color='r', ha='right', va='bottom', rotation='0',\
+		bbox=dict(facecolor='k'));
+	ax.text(0.32, 0.35, '%.2f ( %.2f)min'%(half_life, abs_halflife), transform=ax.transAxes, fontsize=8, color='g', ha='right',\
+		va='bottom', rotation='0', bbox=dict(facecolor='k'));
+	ax.text(0.29, 0.30, 'DEGREES OF FREEDOM: ', transform=ax.transAxes, fontsize=8, color='r', ha='right', va='bottom', rotation='0',\
+		bbox=dict(facecolor='k'));
+	ax.text(0.32, 0.30, '%d'%(nu), transform=ax.transAxes, fontsize=8, color='g', ha='right', va='bottom', rotation='0',\
+		bbox=dict(facecolor='k'));
+	ax.text(0.229, 0.25, 'TEST CRITERION: ', transform=ax.transAxes, fontsize=8, color='r', ha='right', va='bottom', rotation='0',\
+		bbox=dict(facecolor='k'));
+	ax.text(0.30, 0.25, '%.2f'%(M), transform=ax.transAxes, fontsize=8, color='g', ha='right', va='bottom', rotation='0',\
+		bbox=dict(facecolor='k'));
+	ax.text(0.26, 0.20, 'CONFIDENCE LEVEL: ', transform=ax.transAxes, fontsize=8, color='r', ha='right', va='bottom',\
+		rotation='0', bbox=dict(facecolor='k'));
+	ax.text(0.31, 0.20, '%.2f'%(conf), transform=ax.transAxes, fontsize=8, color='g', ha='right', va='bottom', rotation='0',\
+		bbox=dict(facecolor='k'));
+	ax.legend([plot_1, plot_2], ["Data Points", 'Linear Fit, R = {:.3f}'.format(r_val)], borderpad=2, prop = {'size' : 6.5},\
+		  loc = 'upper right', shadow = True, facecolor="w", title = "Legend");
 	matplotlib.pyplot.savefig('./output/plot.png');
 	matplotlib.pyplot.show();
 	exit();
