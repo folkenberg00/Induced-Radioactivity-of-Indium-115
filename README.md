@@ -11,15 +11,15 @@ The decay constant is indirectly measured in order to determine the half-life of
 <ul>
   <li><a href="https://numpy.org/doc/stable/user/whatisnumpy.html">NumPy </a>- n-dimensional arrays of homogeneous data types</li>
   <li><a href="https://matplotlib.org/stable/users/index">matplotlib </a>- 2D Plotting</li>
-  <li><a href="https://scipy.org/">scipy</a>- Scientific programming</li>
-  <li><a href="https://pandas.pydata.org/">pandas</a>- Data analysis and manipulation</li>
+  <li><a href="https://scipy.org/">scipy </a>- Scientific programming</li>
+  <li><a href="https://pandas.pydata.org/">pandas </a>- Data analysis and manipulation</li>
   
 </ul>
 <h3 align="left">Attached Files</h3>
 <hr width="100%" color="white" size="2px"/>
 <ul>
   <li><a href="https://github.com/folkenberg00/Induced-Radioactivity-of-Indium-115/blob/main/plotting.py">plotting.py </a>- The Python program itself</li>
-  <li><a href="https://github.com/folkenberg00/Induced-Radioactivity-of-Indium-115/blob/main/radioactivity.data.xlsx">radioactivity.data.xlsx</a>- Contains sample raw data from the lab</li>
+  <li><a href="https://github.com/folkenberg00/Induced-Radioactivity-of-Indium-115/blob/main/radioactivity.data.xlsx">radioactivity.data.xlsx </a>- Contains sample raw data from the lab</li>
   <li><a href="https://github.com/folkenberg00/Induced-Radioactivity-of-Indium-115/blob/main/radioactivity.data.csv">radioactivity.data.csv </a>- Same data as that in the supplied xlsx file, just in a different format</li>
   <li><a href="https://github.com/folkenberg00/Induced-Radioactivity-of-Indium-115/tree/main/output">output </a>- Contains 2 files: plot.png - the actual summarised ouput in a plot, report.out.csv - generated file with some processing results </li>
 </ul>
